@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Category\CategoryTable;
+use App\Livewire\Category\CreateCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/category', CategoryTable::class)->name('category');
+    Route::get('/category/create', CreateCategory::class)->name('category.create');
 });
