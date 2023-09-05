@@ -9,7 +9,7 @@
                         <div class="col-md-12">
                             <label class="small mb-1" for="category">Category</label>
                             <input class="form-control" wire:model="form.name" id="category" type="text" placeholder="Enter category" value="">
-                            @error('category') <small class="text-danger">{{ $message }}</small>  @enderror
+                            @error('form.name') <small class="text-danger">{{ $message }}</small>  @enderror
                         </div>
                     </div>
 

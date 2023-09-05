@@ -40,21 +40,21 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('home') }}">
+            <a class="nav-link" href="{{ route('home') }}" wire:navigate>
                 <i class="fas fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('home') }}">
+            <a class="nav-link" href="{{ route('home') }}" wire:navigate>
                 <i class="fas fa-money-bill-wave"></i>
                 <span>Expenses</span>
             </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('category') }}">
+            <a class="nav-link" href="{{ route('category') }}" wire:navigate>
                 <i class="fas fa-list"></i>
                 <span>Category</span>
             </a>

@@ -13,7 +13,7 @@ class CreateCategory extends Component
     {
         $this->form->store();
 
-        return $this->redirect(CategoryTable::class);
+        return $this->redirect(CategoryTable::class, navigate: true);
     }
 
     public function render()
