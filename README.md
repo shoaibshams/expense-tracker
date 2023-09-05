@@ -34,14 +34,46 @@ You should now be able to access the project at http://localhost:8000.
 To use Expense Tracker, you will need to create an account with your name, email, and password. Once you log in, you can start adding your expenses by clicking on the "Add Expense" button. You can enter the amount, date, category, and description of each expense. You can also edit or delete your expenses by clicking on the corresponding icons in the table.
 You can view your expenses by month, year, or category by using the filters on the top of the page. You can also generate reports to see your total expenses, average expenses, and expense distribution by category. You can export your reports as PDF or CSV files by clicking on the "Export" button.
 
-## Contributing
-Expense Tracker is an open source project and welcomes contributions from anyone who is interested. If you want to contribute to this project, please follow these steps:
-- Fork this repository and clone it to your local machine.
-- Create a new branch for your feature or bug fix.
-- Write clean and well-commented code.
-- Test your code and make sure it works as expected.
-- Push your changes to your fork and create a pull request to the main branch.
-- Wait for feedback and approval from the maintainers.
+# Contributing
+
+Contributions are **welcome** and will be fully **credited**.
+
+Please read and understand the contribution guide before creating an issue or pull request.
+
+## Etiquette
+
+This project is open source, and as such, the maintainers give their free time to build and maintain the source code
+held within. They make the code freely available in the hope that it will be of use to other developers. It would be
+extremely unfair for them to suffer abuse or anger for their hard work.
+
+Please be considerate towards maintainers when raising issues or presenting pull requests. Let's show the
+world that developers are civilized and selfless people.
+
+It's the duty of the maintainer to ensure that all submissions to the project are of sufficient
+quality to benefit the project. Many developers have different skillsets, strengths, and weaknesses. Respect the maintainer's decision, and do not be upset or abusive if your submission is not used.
+
+## Viability
+
+When requesting or submitting new features, first consider whether it might be useful to others. Open
+source projects are used by many developers, who may have entirely different needs to your own. Think about
+whether or not your feature is likely to be used by other users of the project.
+
+## Procedure
+
+Before filing an issue:
+
+- Attempt to replicate the problem, to ensure that it wasn't a coincidental incident.
+- Check to make sure your feature suggestion isn't already present within the project.
+- Check the pull requests tab to ensure that the bug doesn't have a fix in progress.
+- Check the pull requests tab to ensure that the feature isn't already in progress.
+
+Before submitting a pull request:
+
+- Check the codebase to ensure that your feature doesn't already exist.
+- Check the pull requests to ensure that another person hasn't already submitted the feature or fix.
+
+**Happy coding**!
 
 ## License
-Expense Tracker is licensed under the [MIT License]. See the LICENSE file for more details.
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
