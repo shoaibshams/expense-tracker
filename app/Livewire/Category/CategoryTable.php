@@ -8,12 +8,22 @@ use Livewire\Component;
 class CategoryTable extends Component
 {
     public $categories = [];
-    public function mount()
-    {
-        $this->categories = Category::all();
-    }
+    public $delete_id = '';
+
     public function render()
     {
+        $this->categories = Category::all();
+
         return view('livewire.category-table');
+    }
+
+    public function setDeleteId($id)
+    {
+        $this->delete_id= $id;
+    }
+
+    public function delete()
+    {
+        Category::where('id', $this->delete_id)->delete();
     }
 }
