@@ -3,8 +3,15 @@
 Expense Tracker is an open source project that helps you track your personal expenses using Laravel and Livewire. 
 You can easily create and manage your expenses, categorize them by type, and generate reports to see your spending patterns.
 
-## Install dependencies
+## Installation
 ```bash
+# Clone the repository
+git clone https://github.com/shoaibshams/expense-tracker.git
+
+# Change the directory
+cd expense-tracker
+
+# Install dependencies
 composer install
 
 # Create a copy of .env file
@@ -29,6 +36,11 @@ php artisan serve
 ```
 
 You should now be able to access the project at http://localhost:8000.
+
+## Credentials
+**Email:** admin@admin.com
+
+**Password:** password
 
 ## Usage
 To use Expense Tracker, you will need to create an account with your name, email, and password. Once you log in, you can start adding your expenses by clicking on the "Add Expense" button. You can enter the amount, date, category, and description of each expense. You can also edit or delete your expenses by clicking on the corresponding icons in the table.
