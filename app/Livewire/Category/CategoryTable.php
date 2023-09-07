@@ -4,22 +4,23 @@ namespace App\Livewire\Category;
 
 use App\Models\Category;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CategoryTable extends Component
 {
-    public $categories = [];
+    use WithPagination;
     public $delete_id = '';
 
     public function render()
     {
-        $this->categories = Category::all();
-
-        return view('livewire.category-table');
+        return view('livewire.category-table', [
+            'categories' => Category::paginate(10)
+        ]);
     }
 
     public function setDeleteId($id)
     {
-        $this->delete_id= $id;
+        $this->delete_id = $id;
     }
 
     public function delete()

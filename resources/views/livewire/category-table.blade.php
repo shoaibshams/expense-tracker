@@ -21,9 +21,9 @@
             </tr>
             </thead>
             <tbody class="bg-white">
-            @foreach($categories as $key => $category)
+            @foreach($categories as $index => $category)
                 <tr wire:key="{{ $category->id }}">
-                    <td>{{ ++$key }}</td>
+                    <td>{{ $index + $categories->firstItem() }}</td>
                     <td>{{ $category->name }}</td>
                     <td>
                         <a href="{{ route('category.edit', $category->id) }}" class="btn btn-primary" wire:navigate>
@@ -41,37 +41,9 @@
             @endforeach
             </tbody>
         </table>
+
+        {{ $categories->links() }}
     </div>
 
-    <div
-            wire:ignore.self
-            class="modal fade"
-            id="deleteModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="deleteModalLabel"
-            aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Delete Confirm</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true close-btn">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure want to delete?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
-                    <button
-                            type="button"
-                            wire:click="delete()"
-                            class="btn btn-danger close-modal"
-                            data-dismiss="modal">Yes, Delete
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <x-modals.delete />
 </div>

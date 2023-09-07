@@ -272,7 +272,8 @@
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                             <img
                                 class="img-profile rounded-circle"
-                                src="{{ asset('sbadmin/img/undraw_profile.svg') }}">
+                                src="{{ asset('sbadmin/img/undraw_profile.svg') }}"
+                                alt="">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div
@@ -356,6 +357,7 @@
         </div>
     </div>
 </div>
+
 </body>
 
 </html>
