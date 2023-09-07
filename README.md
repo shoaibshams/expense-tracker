@@ -84,7 +84,9 @@ Before submitting a pull request:
 - Check the codebase to ensure that your feature doesn't already exist.
 - Check the pull requests to ensure that another person hasn't already submitted the feature or fix.
 
-**Happy coding**!
+## Security
+
+If you discover any security-related issues, please email [shoaibshamshere@gmail.com](mailto:shoaibshamshere@gmail.com) instead of using the issue tracker.
 
 ## License
 
