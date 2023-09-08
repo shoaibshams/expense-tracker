@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Livewire\Category;
+namespace App\Livewire\Expense;
 
-use App\Models\Category;
+use App\Models\Expense;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class CategoryTable extends Component
+class ExpenseTable extends Component
 {
     use WithPagination;
 
@@ -14,8 +14,8 @@ class CategoryTable extends Component
 
     public function render()
     {
-        return view('livewire.category.category-table', [
-            'categories' => Category::paginate(10),
+        return view('livewire.expense.expense-table', [
+            'expenses' => Expense::paginate(10),
         ]);
     }
 
@@ -26,6 +26,6 @@ class CategoryTable extends Component
 
     public function delete()
     {
-        Category::where('id', $this->delete_id)->delete();
+        Expense::where('id', $this->delete_id)->delete();
     }
 }

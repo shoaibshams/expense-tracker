@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Expense Tracker</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('home') }}" wire:navigate>
+            <a class="nav-link" href="{{ route('expense') }}" wire:navigate>
                 <i class="fas fa-money-bill-wave"></i>
                 <span>Expenses</span>
             </a>

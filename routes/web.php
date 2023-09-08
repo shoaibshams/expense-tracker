@@ -3,6 +3,9 @@
 use App\Livewire\Category\CategoryTable;
 use App\Livewire\Category\CreateCategory;
 use App\Livewire\Category\EditCategory;
+use App\Livewire\Expense\CreateExpense;
+use App\Livewire\Expense\EditExpense;
+use App\Livewire\Expense\ExpenseTable;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +27,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/category', CategoryTable::class)->name('category');
     Route::get('/category/create', CreateCategory::class)->name('category.create');
     Route::get('/category/{category}/edit', EditCategory::class)->name('category.edit');
+
+    Route::get('/expense', ExpenseTable::class)->name('expense');
+    Route::get('/expense/create', CreateExpense::class)->name('expense.create');
+    Route::get('/expense/{expense}/edit', EditExpense::class)->name('expense.edit');
 });

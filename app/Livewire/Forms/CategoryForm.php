@@ -17,7 +17,8 @@ class CategoryForm extends Form
     #[Rule('required|min:3')]
     public $name = '';
 
-    public function store() {
+    public function store()
+    {
         $this->validate();
 
         Category::create($this->only(['name']));
@@ -30,7 +31,8 @@ class CategoryForm extends Form
         $this->name = $category->name;
     }
 
-    public function update() {
+    public function update()
+    {
         $this->validate();
 
         $this->category->update($this->all());

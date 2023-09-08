@@ -15,29 +15,28 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
-             'name' => 'admin',
-             'email' => 'admin@admin.com',
-         ]);
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+        ]);
 
         $categories = [
-            "Groceries",
-            "Rent or Mortgage",
-            "Utilities",
-            "Transportation",
-            "Healthcare",
-            "Entertainment",
-            "Dining Out",
-            "Clothing",
-            "Education",
-            "Travel",
-            "Insurance",
-            "Home Maintenance",
-            "Savings",
-            "Debt Repayment",
-            "Gifts and Donations",
-            "Taxes",
-            "Miscellaneous"
+            'General',
+            'Groceries',
+            'Fuel',
+            'Utilities',
+            'Education',
+            'Rent',
+            'Healthcare',
+            'Entertainment',
+            'Food',
+            'Clothing',
+            'Travel',
+            'Insurance',
+            'Home Maintenance',
+            'Gifts and Donations',
+            'Taxes',
+            'Miscellaneous',
         ];
 
         foreach ($categories as $category) {

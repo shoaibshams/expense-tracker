@@ -9,6 +9,7 @@ use Livewire\Component;
 class EditCategory extends Component
 {
     public CategoryForm $form;
+
     public function mount(Category $category)
     {
         $this->form->setCategory($category);
