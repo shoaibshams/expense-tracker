@@ -15,7 +15,7 @@ class CategoryTable extends Component
     public function render()
     {
         return view('livewire.category.category-table', [
-            'categories' => Category::paginate(10),
+            'categories' => Category::paginate(25),
         ]);
     }
 

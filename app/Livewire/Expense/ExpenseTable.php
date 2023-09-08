@@ -15,7 +15,10 @@ class ExpenseTable extends Component
     public function render()
     {
         return view('livewire.expense.expense-table', [
-            'expenses' => Expense::paginate(10),
+            'expenses' => Expense::latest('date')->paginate(25),
+            'current_month_expenses' => Expense::whereMonth('date', date('n'))->sum('amount'),
+            'current_year_expenses' => Expense::whereYear('date', date('Y'))->sum('amount'),
+            'total_expenses' => Expense::sum('amount'),
         ]);
     }
 

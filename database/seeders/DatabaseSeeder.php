@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,28 +18,5 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.com',
         ]);
-
-        $categories = [
-            'General',
-            'Groceries',
-            'Fuel',
-            'Utilities',
-            'Education',
-            'Rent',
-            'Healthcare',
-            'Entertainment',
-            'Food',
-            'Clothing',
-            'Travel',
-            'Insurance',
-            'Home Maintenance',
-            'Gifts and Donations',
-            'Taxes',
-            'Miscellaneous',
-        ];
-
-        foreach ($categories as $category) {
-            Category::create(['name' => $category]);
-        }
     }
 }
