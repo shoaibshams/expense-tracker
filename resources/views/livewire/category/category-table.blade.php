@@ -69,7 +69,9 @@
             <thead>
             <tr>
                 <th class="border-bottom">#</th>
+                <th class="border-bottom">Icon</th>
                 <th class="border-bottom">Name</th>
+                <th class="border-bottom">Type</th>
                 <th class="border-bottom">Action</th>
             </tr>
             </thead>
@@ -77,7 +79,9 @@
             @foreach($categories as $index => $category)
                 <tr wire:key="{{ $category->id }}">
                     <td>{{ $index + $categories->firstItem() }}</td>
+                    <td><i class="{{ $category->icon }}"></i></td>
                     <td>{{ $category->name }}</td>
+                    <td>{{ $category->type }}</td>
                     <td>
                         <a href="{{ route('category.edit', $category->id) }}" class="btn btn-primary" wire:navigate>
                             <i class="fa fa-edit"></i>

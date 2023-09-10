@@ -17,11 +17,17 @@ class CategoryForm extends Form
     #[Rule('required|min:3')]
     public $name = '';
 
+    #[Rule('required|in:income,expense')]
+    public $type = 'income';
+
+    #[Rule('nullable')]
+    public $icon = 'fa fa-link';
+
     public function store()
     {
         $this->validate();
 
-        Category::create($this->only(['name']));
+        Category::create($this->except(['id']));
     }
 
     public function setCategory($category)
@@ -29,6 +35,8 @@ class CategoryForm extends Form
         $this->category = $category;
         $this->id = $category->id;
         $this->name = $category->name;
+        $this->type = $category->type;
+        $this->icon = $category->icon;
     }
 
     public function update()
