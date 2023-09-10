@@ -11,7 +11,7 @@
                 <path fill-rule="evenodd"
                   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                   clip-rule="evenodd"></path>
-              </svg></span></span>
+              </svg></span>
             <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Search" aria-label="Search"
               aria-describedby="topbar-addon">
           </div>
@@ -22,18 +22,6 @@
       </div>
       <!-- Navbar links -->
       <ul class="navbar-nav align-items-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link text-dark notification-bell unread dropdown-toggle" data-unread-notifications="true"
-            href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-            <svg class="icon icon-sm text-gray-900" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
-              </path>
-            </svg>
-          </a>
-
-        </li>
         <li class="nav-item dropdown ms-lg-3">
           <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">

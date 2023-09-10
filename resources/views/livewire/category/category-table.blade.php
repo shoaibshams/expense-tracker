@@ -45,16 +45,14 @@
                 </span>
                     <input type="text" wire:model.live="search" class="form-control" placeholder="Search categories">
                 </div>
-                <select class="form-select fmxw-200 d-none d-md-inline" aria-label="Message select example 2">
-                    <option selected>All</option>
-                    <option value="1">Active</option>
-                    <option value="2">Inactive</option>
-                    <option value="3">Income</option>
-                    <option value="3">Expense</option>
+                <select class="form-select fmxw-200 d-none d-md-inline" wire:model.live="type">
+                    <option value="">All</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
                 </select>
             </div>
             <div class="col-3 col-lg-4 d-flex justify-content-end">
-                <select class="form-select fmxw-100 d-none d-md-inline" wire:model.live="per_page">
+                <select class="form-select fmxw-100" wire:model.live="per_page">
                     <option value="10">10</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
