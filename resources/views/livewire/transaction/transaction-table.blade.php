@@ -40,16 +40,34 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-9 col-lg-8 d-md-flex">
                 <div class="input-group me-2 me-lg-3 fmxw-200">
-                <span class="input-group-text">
-                    <i class="fa fa-calendar"></i>
-                </span>
+                    <span class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </span>
                     <input type="date" wire:model.live="date" class="form-control">
                 </div>
-                <select class="form-select fmxw-200 d-none d-md-inline" wire:model.live="type">
-                    <option value="">All</option>
-                    <option value="income">Income</option>
-                    <option value="expense">Expense</option>
-                </select>
+
+                <div class="input-group me-2 me-lg-3 fmxw-200">
+                    <span class="input-group-text">
+                        <i class="fa fa-table"></i>
+                    </span>
+                    <select class="form-select" wire:model.live="type">
+                        <option value="">All Type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+
+                <div class="input-group me-2 me-lg-3 fmxw-200">
+                    <span class="input-group-text">
+                        <i class="fa fa-list"></i>
+                    </span>
+                    <select class="form-select" wire:model.live="category_id">
+                        <option value="">All Categories</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
             <div class="col-3 col-lg-4 d-flex justify-content-end">
                 <select class="form-select fmxw-100" wire:model.live="per_page">
@@ -64,7 +82,7 @@
 
     <div class="row">
         <div class="col-md-9">
-            <table class="table table-bordered">
+            <table class="table user-table table-hover align-items-center">
                 <thead class="thead-dark">
                 <tr>
                     <th>#</th>
@@ -76,7 +94,7 @@
                 </tr>
                 </thead>
                 <tbody class="bg-white">
-                @foreach($transactions as $index => $transaction)
+                @forelse($transactions as $index => $transaction)
                     <tr wire:key="{{ $transaction->id }}">
                         <td>{{ $index + $transactions->firstItem() }}</td>
                         <td>{{ $transaction->date->format('d-m-Y') }}</td>
@@ -84,7 +102,10 @@
                         <td>{{ $transaction->amount }}</td>
                         <td>{{ $transaction->description }}</td>
                         <td>
-                            <a href="{{ route('transaction.edit', $transaction->id) }}" class="btn btn-sm btn-primary" wire:navigate>
+                            <a
+                                href="{{ route('transaction.edit', $transaction->id) }}"
+                                class="btn btn-sm btn-primary"
+                                wire:navigate>
                                 <i class="fa fa-edit"></i>
                             </a>
                             <button
@@ -96,12 +117,16 @@
                             </button>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td class="text-danger text-center" colspan="6">No record found</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
-
             {{ $transactions->links() }}
         </div>
+
         <div class="col-md-3">
             <div class="card border-left-info shadow py-2 mb-2">
                 <div class="card-body">
