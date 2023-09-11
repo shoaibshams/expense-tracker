@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('expenses', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->date('date');
             $table->foreignId('category_id')->constrained();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('expenses');
+        Schema::dropIfExists('transactions');
     }
 };

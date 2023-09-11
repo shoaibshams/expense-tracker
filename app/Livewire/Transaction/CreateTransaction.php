@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Livewire\Expense;
+namespace App\Livewire\Transaction;
 
-use App\Livewire\Forms\ExpenseForm;
+use App\Livewire\Forms\TransactionForm;
 use App\Models\Category;
 use Livewire\Component;
 
-class CreateExpense extends Component
+class CreateTransaction extends Component
 {
-    public ExpenseForm $form;
+    public TransactionForm $form;
 
     public function render()
     {
         $this->form->date = date('Y-m-d');
         $this->form->category_id = 1;
 
-        return view('livewire.expense.create-expense', [
+        return view('livewire.transaction.create-transaction', [
             'categories' => Category::all(),
         ]);
     }
@@ -24,6 +24,6 @@ class CreateExpense extends Component
     {
         $this->form->store();
 
-        return $this->redirect(ExpenseTable::class, navigate: true);
+        return $this->redirect(TransactionTable::class, navigate: true);
     }
 }

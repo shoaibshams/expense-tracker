@@ -9,8 +9,8 @@ class Category extends Model
 {
     protected $fillable = ['name', 'type', 'icon'];
 
-    public function expenses(): HasMany
+    public function transactions(): HasMany
     {
-        return $this->hasMany(Expense::class);
+        return $this->hasMany(Transaction::class);
     }
 }

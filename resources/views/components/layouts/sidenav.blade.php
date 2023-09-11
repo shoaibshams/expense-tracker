@@ -18,8 +18,8 @@
                 </a>
             </li>
 
-            <li @class(['nav-item','active' => request()->routeIs('expense')])>
-                <a href="{{ route('expense') }}" class="nav-link" wire:navigate>
+            <li @class(['nav-item','active' => request()->routeIs('transaction')])>
+                <a href="{{ route('transaction') }}" class="nav-link" wire:navigate>
                     <i class="fas fa-money-bill-wave me-1"></i>
                     <span class="sidebar-text">Transactions</span>
                 </a>

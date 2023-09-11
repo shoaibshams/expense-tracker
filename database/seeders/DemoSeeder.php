@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use App\Models\Expense;
+use App\Models\Transaction;
 use Illuminate\Database\Seeder;
 
 class DemoSeeder extends Seeder
@@ -39,7 +39,7 @@ class DemoSeeder extends Seeder
         }
 
         for ($i = 0; $i < 100; $i++) {
-            Expense::create([
+            Transaction::create([
                 'date' => fake()->dateTimeBetween(now()->subYear()),
                 'category_id' => rand(1, 16),
                 'amount' => rand(500, 20000),
