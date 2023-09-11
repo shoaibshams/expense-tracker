@@ -1,8 +1,13 @@
 <div class="row">
+
+    <x-layouts.breadcrumb />
+
     <div class="col-md-12">
         <!-- Account details card-->
-        <div class="card mb-4">
-            <div class="card-header">Edit Expense</div>
+        <div class="card border-0 shadow components-section">
+            <div class="card-header bg-gray-800 text-white p-3">
+                <span class="h4">Edit Expense</span>
+            </div>
             <div class="card-body">
                 <form wire:submit="update">
                     <div class="row gx-3 mb-3">
