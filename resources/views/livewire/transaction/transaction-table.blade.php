@@ -6,11 +6,11 @@
                     <li class="breadcrumb-item">
                         <a href="#">
                             <svg
-                                    class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                                 </path>
                             </svg>
                         </a>
@@ -23,9 +23,9 @@
         </div>
         <div class="btn-toolbar mb-2 mb-md-0">
             <a
-                    href="{{ route('transaction.create') }}"
-                    class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"
-                    wire:navigate>
+                href="{{ route('transaction.create') }}"
+                class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"
+                wire:navigate>
                 <i class="fa fa-plus me-1"></i>
                 Add New
             </a>
@@ -128,49 +128,29 @@
         </div>
 
         <div class="col-md-3">
-            <div class="card border-left-info shadow py-2 mb-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Current Month Expenses
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ number_format($current_month_transactions) }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-money-bill-wave fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
+            <div class="card border-0 shadow mb-2">
+                <div class="bg-gray-800 card-title p-2 text-white">
+                    <strong class="mb-1">Today</strong>
                 </div>
-            </div>
-
-            <div class="card border-left-warning shadow py-2 mb-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Current Year Expenses
+                <div class="card-body pt-1">
+                    <div class="d-block">
+                        <div class="d-flex align-items-center me-5">
+                            <div class="icon-shape icon-sm icon-shape-success rounded me-3">
+                                <i class="fa fa-wallet fa-2x"></i>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ number_format($current_year_transactions) }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card border-left-danger shadow py-2 mb-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                Total Expenses
+                            <div class="d-block">
+                                <strong class="mb-0 text-success">Income</strong>
+                                <h5 class="mb-0">33.50%</h5>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ number_format($total_transactions) }}</div>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calculator fa-2x text-gray-300"></i>
+                        <div class="d-flex align-items-center pt-3">
+                            <div class="icon-shape icon-sm icon-shape-warning rounded me-3">
+                                <i class="fa fa-money-bill-wave-alt fa-2x"></i>
+                            </div>
+                            <div class="d-block">
+                                <strong class="mb-0 text-danger">Expense</strong>
+                                <h5 class="mb-0">9,567</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,5 +158,5 @@
         </div>
     </div>
 
-    <x-modals.delete />
+    <x-modals.delete/>
 </div>
