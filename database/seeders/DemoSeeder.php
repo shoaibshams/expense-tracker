@@ -40,7 +40,7 @@ class DemoSeeder extends Seeder
 
         for ($i = 0; $i < 100; $i++) {
             Transaction::create([
-                'date' => fake()->dateTimeBetween(now()->subYear()),
+                'date' => fake()->dateTimeBetween(now()->subYear())->format('Y-m-d'),
                 'category_id' => rand(1, 16),
                 'amount' => rand(500, 20000),
                 'description' => fake()->text(50),
