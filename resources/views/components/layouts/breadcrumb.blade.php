@@ -1,4 +1,4 @@
-<div class="mt-3">
+<div class="mt-3" wire:ignore>
     <div class="d-block mb-4 mb-md-0">
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
