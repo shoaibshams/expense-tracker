@@ -1,5 +1,5 @@
 <div>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-4">
 
         <x-layouts.breadcrumb heading="Categories" sub-heading="Manage your income and expense categories." />
 
