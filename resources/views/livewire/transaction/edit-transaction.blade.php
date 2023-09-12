@@ -17,11 +17,14 @@
                             @error('form.date') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
 
-                        <div class="col-md-4">
-                            <label class="small mb-1" for="category_id">Category</label>
-                            <select class="form-control" wire:model="form.category_id" id="category_id">
+                        <div class="col-md-4" wire:ignore>
+                            <label class="small mb-1" for="category_id">
+                                Category
+                                <span class="badge badge-pill bg-success my-0" id="type"></span>
+                            </label>
+                            <select class="form-control select2" wire:model="form.category_id" id="category_id">
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" wire:key="{{ $category->id }}" data-type="{{ $category->type }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                             @error('form.category_id') <small class="text-danger">{{ $message }}</small> @enderror
@@ -46,3 +49,20 @@
         </div>
     </div>
 </div>
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2({
+                theme: "bootstrap-5"
+            });
+
+            $('#type').text($(this).find(':selected').data('type'))
+
+            $('#category_id').change(function (){
+                Livewire.first().form.category_id = $(this).val()
+                $('#type').text($(this).find(':selected').data('type'))
+            })
+        })
+    </script>
+@endpush
