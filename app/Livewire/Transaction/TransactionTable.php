@@ -20,7 +20,7 @@ class TransactionTable extends Component
     public function render()
     {
         $transactions = Transaction::with('category')
-            ->when(!empty($this->date), fn($q) => $q->where('date', $this->date))
+            ->when(!empty($this->date), fn($q) => $q->whereDate('date', $this->date))
             ->when(!empty($this->category_id), fn($q) => $q->where('category_id', $this->category_id))
             ->when(!empty($this->type), fn($q) => $q->whereRelation('category', 'type', $this->type))
             ->latest('date')->paginate($this->per_page);
