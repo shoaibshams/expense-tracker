@@ -59,7 +59,7 @@
 
             $('#type').text($(this).find(':selected').data('type'))
 
-            $('#category_id').change(function (){
+            $('.select2').change(function (){
                 Livewire.first().form.category_id = $(this).val()
                 $('#type').text($(this).find(':selected').data('type'))
             })
