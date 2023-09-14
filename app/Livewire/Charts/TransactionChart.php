@@ -2,22 +2,49 @@
 
 namespace App\Livewire\Charts;
 
+use App\Models\Transaction;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class TransactionChart extends Component
 {
+    public $type = 'monthly';
     public $labels = '';
-    public $income = '';
-    public $expense = '';
+    public $today_expenses = 0;
+    public $total_expenses = 0;
+    public $expenses = 0;
 
-    public function mount()
-    {
-        $this->labels = json_encode(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
-        $this->income = json_encode([1,2,3,4,5,6,7]);
-        $this->expense = json_encode([7,6,5,4,3,2,1]);
-    }
     public function render()
     {
+        $this->fetchData();
+
         return view('livewire.charts.transaction-chart');
+    }
+
+    public function fetchData()
+    {
+        $expense = Transaction::selectRaw('SUM(amount) as amount, DAY(date) as day')
+            ->expense()
+            ->when($this->type == 'weekly', function ($q){
+                $q->whereBetween('date', [now()->startOfWeek(), now()->endOfWeek()]);
+            })
+            ->whereMonth('date', date('m'))
+            ->whereYear('date', date('Y'))
+            ->groupBy('date')
+            ->orderBy('date')
+            ->get();
+
+        $this->today_expenses = $expense->where('day', date('d'))->sum('amount');
+        $this->total_expenses = $expense->sum('amount');
+        $this->labels = json_encode($expense->pluck('day'));
+        $this->expenses = json_encode($expense->pluck('amount'));
+
+        $this->dispatch('type-updated', labels:$this->labels, expenses:$this->expenses);
+    }
+
+    public function setType($type = 'monthly')
+    {
+        $this->type = $type;
+        $this->fetchData();
     }
 }
