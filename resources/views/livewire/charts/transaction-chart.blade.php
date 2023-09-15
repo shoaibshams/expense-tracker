@@ -10,8 +10,8 @@
                 </div>
             </div>
             <div class="d-flex ms-auto">
-                <button class="btn btn-secondary text-dark btn-sm me-2" wire:click="setType('monthly')">Month</button>
-                <button class="btn btn-sm me-3" wire:click="setType('weekly')">Week</button>
+                <button class="btn {{ $type == 'monthly' ? 'btn-secondary text-dark' : null }} btn-sm me-2" wire:click="setType('monthly')">Month</button>
+                <button class="btn {{ $type == 'weekly' ? 'btn-secondary text-dark' : null }} btn-sm me-3" wire:click="setType('weekly')">Week</button>
             </div>
         </div>
         <div class="card-body p-2">
@@ -22,6 +22,7 @@
 
 @push('js')
     <script>
+        loadChart('{{ $labels }}','{!! $expenses !!}');
 
         document.addEventListener('livewire:initialized', () => {
             @this.on('type-updated', (event) => {
@@ -55,7 +56,7 @@
                         return '$' + (value / 1) + 'k';
                     }
                 }
-            });
+            }).update();
         }
     </script>
 @endpush

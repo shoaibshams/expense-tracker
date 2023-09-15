@@ -21,6 +21,12 @@ class TransactionChart extends Component
         return view('livewire.charts.transaction-chart');
     }
 
+    public function setType($type = 'monthly')
+    {
+        $this->type = $type;
+        $this->fetchData();
+    }
+
     public function fetchData()
     {
         $expense = Transaction::selectRaw('SUM(amount) as amount, DAY(date) as day')
@@ -40,11 +46,5 @@ class TransactionChart extends Component
         $this->expenses = json_encode($expense->pluck('amount'));
 
         $this->dispatch('type-updated', labels:$this->labels, expenses:$this->expenses);
-    }
-
-    public function setType($type = 'monthly')
-    {
-        $this->type = $type;
-        $this->fetchData();
     }
 }

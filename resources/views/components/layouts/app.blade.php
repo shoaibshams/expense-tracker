@@ -1,6 +1,5 @@
 <x-layouts.base>
 
-
     <x-layouts.sidenav/>
 
     <main class="content">

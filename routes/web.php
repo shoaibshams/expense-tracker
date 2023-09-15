@@ -6,6 +6,7 @@ use App\Livewire\Category\EditCategory;
 use App\Livewire\Transaction\CreateTransaction;
 use App\Livewire\Transaction\EditTransaction;
 use App\Livewire\Transaction\TransactionTable;
+use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/', Dashboard::class)->name('home');
 
     Route::get('/category', CategoryTable::class)->name('category');
     Route::get('/category/create', CreateCategory::class)->name('category.create');
