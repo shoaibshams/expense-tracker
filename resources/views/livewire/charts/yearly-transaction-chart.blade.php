@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="card-body p-2">
-        <div id="yearly-transaction-chart" class="ct-golden-section"></div>
+        <div id="yearly-transaction-chart" style="height: 200px"></div>
     </div>
 </div>
 
