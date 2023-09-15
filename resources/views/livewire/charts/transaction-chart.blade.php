@@ -22,19 +22,11 @@
 
 @push('js')
     <script>
-        loadChart('{{ $labels }}','{!! $expenses !!}');
-
-        document.addEventListener('livewire:initialized', () => {
-            @this.on('type-updated', (event) => {
-                loadChart(event.labels, event.expenses)
-            });
-        });
-
         function loadChart(labels, expenses) {
             new Chartist.Line('#transaction-chart', {
-                labels: JSON.parse(labels),
+                labels: labels,
                 series: [
-                    JSON.parse(expenses),
+                    expenses,
                 ]
             }, {
                 low: 0,
@@ -56,7 +48,7 @@
                         return '$' + (value / 1) + 'k';
                     }
                 }
-            }).update();
+            })
         }
     </script>
 @endpush

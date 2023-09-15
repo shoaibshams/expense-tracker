@@ -45,6 +45,6 @@ class TransactionChart extends Component
         $this->labels = json_encode($expense->pluck('day'));
         $this->expenses = json_encode($expense->pluck('amount'));
 
-        $this->dispatch('type-updated', labels:$this->labels, expenses:$this->expenses);
+        $this->js("loadChart($this->labels, $this->expenses)");
     }
 }
