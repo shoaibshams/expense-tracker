@@ -3,6 +3,18 @@
 Expense Tracker is an open source project that helps you track your personal expenses using Laravel and Livewire. 
 You can easily create and manage your expenses, categorize them by type, and generate reports to see your spending patterns.
 
+## Screenshots
+![dashboard](https://github.com/shoaibshams/expense-tracker/assets/9925154/19cfafbb-e6e7-446b-a3c3-3bbfe4abd072)
+![categories-table](https://github.com/shoaibshams/expense-tracker/assets/9925154/313081a2-d35a-4537-8a5a-ae53bf7fc992)
+![new-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/7a136707-aca5-4b45-b9d2-8db5ac3f17cc)
+![edit-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/7f57306d-1aa5-4a9f-9dc8-ff7ebaf76de3)
+![delete-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/51f25a3b-df47-4233-aa88-544acb4802ac)
+![transactions-table](https://github.com/shoaibshams/expense-tracker/assets/9925154/8afa4e8e-279f-451b-bccf-c49f9cbb9779)
+![new-transaction](https://github.com/shoaibshams/expense-tracker/assets/9925154/630f96f9-cb2d-4dad-a3ec-d7ec5a40cf57)
+![edit-transaction](https://github.com/shoaibshams/expense-tracker/assets/9925154/ba718886-6286-4f98-bcd4-ca00ac3e6c50)
+
+
+
 ## Installation
 ```bash
 # Clone the repository
