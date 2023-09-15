@@ -6,7 +6,7 @@ use App\Models\Transaction;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class TransactionChart extends Component
+class MonthlyTransactionChart extends Component
 {
     public $type = 'monthly';
     public $labels = '';
@@ -18,7 +18,7 @@ class TransactionChart extends Component
     {
         $this->fetchData();
 
-        return view('livewire.charts.transaction-chart');
+        return view('livewire.charts.monthly-transaction-chart');
     }
 
     public function setType($type = 'monthly')

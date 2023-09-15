@@ -41,7 +41,10 @@ class TransactionTable extends Component
 
     public function delete()
     {
-        Transaction::where('id', $this->delete_id)->delete();
+        $delete = Transaction::where('id', $this->delete_id)->delete();
+        if ($delete) {
+            $this->redirect(self::class);
+        }
     }
 
     public function updated($property)

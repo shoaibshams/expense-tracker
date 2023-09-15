@@ -70,6 +70,7 @@
                     <th>#</th>
                     <th>Date</th>
                     <th>Category</th>
+                    <th>Type</th>
                     <th>Amount</th>
                     <th>Description</th>
                     <th>Action</th>
@@ -81,7 +82,16 @@
                         <td>{{ $index + $transactions->firstItem() }}</td>
                         <td>{{ $transaction->date->format('d-m-Y') }}</td>
                         <td>{{ $transaction->category->name }}</td>
-                        <td>{{ $transaction->amount }}</td>
+                        <td>
+                            <span
+                                @class([
+                                'badge badge-pill',
+                                'bg-success' => $transaction->category->type === 'income',
+                                'bg-danger' => $transaction->category->type === 'expense'
+                                ])>
+                                {{ $transaction->category->type }}</span>
+                        </td>
+                        <td>{{ number_format($transaction->amount) }}</td>
                         <td>{{ $transaction->description }}</td>
                         <td>
                             <a
@@ -93,15 +103,15 @@
                             <button
                                 class="btn btn-sm btn-danger"
                                 wire:click="setDeleteId({{ $transaction->id }})"
-                                data-toggle="modal"
-                                data-target="#deleteModal">
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteModal">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td class="text-danger text-center" colspan="6">No record found</td>
+                        <td class="text-danger text-center" colspan="7">No record found</td>
                     </tr>
                 @endforelse
                 </tbody>

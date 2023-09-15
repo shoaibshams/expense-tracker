@@ -38,10 +38,10 @@ class DemoSeeder extends Seeder
             Category::create($category);
         }
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 1000; $i++) {
             Transaction::create([
                 'date' => fake()->dateTimeBetween(now()->subYear())->format('Y-m-d'),
-                'category_id' => rand(1, 16),
+                'category_id' => rand(1, 18),
                 'amount' => rand(500, 20000),
                 'description' => fake()->text(50),
             ]);
