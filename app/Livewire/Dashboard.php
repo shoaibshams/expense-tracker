@@ -9,7 +9,7 @@ class Dashboard extends Component
 {
     public function render()
     {
-        $transactions = Transaction::with('category')->latest('date')->paginate(5);
+        $transactions = Transaction::with('category')->latest('date')->limit(5)->get();
 
         return view('livewire.dashboard', [
             'transactions' => $transactions

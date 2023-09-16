@@ -36,7 +36,7 @@
                                 <tbody class="bg-white">
                                 @forelse($transactions as $index => $transaction)
                                     <tr wire:key="{{ $transaction->id }}">
-                                        <td>{{ $index + $transactions->firstItem() }}</td>
+                                        <td>{{ ++$index }}</td>
                                         <td>{{ $transaction->date->format('d-m-Y') }}</td>
                                         <td>{{ $transaction->category->name }}</td>
                                         <td>
