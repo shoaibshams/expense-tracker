@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Livewire\Category;
+namespace App\Livewire\Account;
 
 use App\Livewire\Forms\CategoryForm;
 use App\Models\Category;
 use Livewire\Component;
 
-class EditCategory extends Component
+class EditAccount extends Component
 {
     public CategoryForm $form;
 
@@ -24,6 +24,6 @@ class EditCategory extends Component
 
     public function render()
     {
-        return view('livewire.category.edit-category');
+        return view('livewire.account.edit-account');
     }
 }

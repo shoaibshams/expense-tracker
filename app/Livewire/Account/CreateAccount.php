@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire\Category;
+namespace App\Livewire\Account;
 
 use App\Livewire\Forms\CategoryForm;
 use Livewire\Component;
 
-class CreateCategory extends Component
+class CreateAccount extends Component
 {
     public CategoryForm $form;
 
@@ -18,6 +18,6 @@ class CreateCategory extends Component
 
     public function render()
     {
-        return view('livewire.category.create-category');
+        return view('livewire.account.create-account');
     }
 }

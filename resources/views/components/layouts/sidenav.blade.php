@@ -32,12 +32,12 @@
                 </a>
             </li>
 
-{{--            <li @class(['nav-item','active' => request()->routeIs('home')])>--}}
-{{--                <a href="{{ route('home') }}" class="nav-link" wire:navigate>--}}
-{{--                    <i class="fa fa-calculator me-1"></i>--}}
-{{--                    <span class="sidebar-text">Accounts</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+            <li @class(['nav-item','active' => request()->routeIs('account')])>
+                <a href="{{ route('account') }}" class="nav-link" wire:navigate>
+                    <i class="fa fa-calculator me-1"></i>
+                    <span class="sidebar-text">Accounts</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -8,6 +8,9 @@ use App\Livewire\Transaction\EditTransaction;
 use App\Livewire\Transaction\TransactionTable;
 use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Account\AccountTable;
+use App\Livewire\Account\CreateAccount;
+use App\Livewire\Account\EditAccount;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +35,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transaction', TransactionTable::class)->name('transaction');
     Route::get('/transaction/create', CreateTransaction::class)->name('transaction.create');
     Route::get('/transaction/{transaction}/edit', EditTransaction::class)->name('transaction.edit');
+
+    Route::get('/account', AccountTable::class)->name('account');
+    Route::get('/account/create', CreateAccount::class)->name('account.create');
+    Route::get('/account/{account}/edit', EditAccount::class)->name('account.edit');
 });
