@@ -4,7 +4,7 @@ Expense Tracker is an open source project that helps you track your personal exp
 You can easily create and manage your expenses, categorize them by type, and generate reports to see your spending patterns.
 
 ## Screenshots
-![dashboard](https://github.com/shoaibshams/expense-tracker/assets/9925154/19cfafbb-e6e7-446b-a3c3-3bbfe4abd072)
+![Dashboard](https://github.com/shoaibshams/expense-tracker/assets/9925154/28f86e21-09d5-48c9-8bd1-783d4729a202)
 ![categories-table](https://github.com/shoaibshams/expense-tracker/assets/9925154/313081a2-d35a-4537-8a5a-ae53bf7fc992)
 ![new-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/7a136707-aca5-4b45-b9d2-8db5ac3f17cc)
 ![edit-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/7f57306d-1aa5-4a9f-9dc8-ff7ebaf76de3)
