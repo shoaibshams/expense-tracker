@@ -11,13 +11,26 @@
             <div class="card-body">
                 <form wire:submit="save">
                     <div class="row gx-3 mb-3">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-xl-3">
                             <label class="small mb-1" for="date">Date</label>
                             <input class="form-control" wire:model="form.date" type="date" id="date">
                             @error('form.date') <small class="text-danger">{{ $message }}</small>  @enderror
                         </div>
 
-                        <div class="col-md-4" wire:ignore>
+                        <div class="col-md-4 col-xl-3">
+                            <label class="small mb-1" for="account_id">
+                                Account
+                            </label>
+                            <select class="form-control" wire:model="form.account_id" id="account_id">
+                                <option value="" disabled>Select Account</option>
+                                @foreach($accounts as $account)
+                                    <option value="{{ $account->id }}" wire:key="{{ $account->id }}">{{ $account->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('form.account_id') <small class="text-danger">{{ $message }}</small> @enderror
+                        </div>
+
+                        <div class="col-md-4 col-xl-3" wire:ignore>
                             <label class="small mb-1" for="category_id">
                                 Category
                                 <span class="badge badge-pill bg-success my-0" id="type"></span>
@@ -30,7 +43,7 @@
                             @error('form.category_id') <small class="text-danger">{{ $message }}</small>  @enderror
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-xl-3">
                             <label class="small mb-1" for="amount">Amount</label>
                             <input class="form-control" wire:model="form.amount" type="number" id="amount">
                             @error('form.amount') <small class="text-danger">{{ $message }}</small>  @enderror

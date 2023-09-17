@@ -3,6 +3,7 @@
 namespace App\Livewire\Transaction;
 
 use App\Livewire\Forms\TransactionForm;
+use App\Models\Account;
 use App\Models\Category;
 use App\Models\Transaction;
 use Livewire\Component;
@@ -27,6 +28,7 @@ class EditTransaction extends Component
     {
         return view('livewire.transaction.edit-transaction', [
             'categories' => Category::all(),
+            'accounts' => Account::all(),
         ]);
     }
 }
