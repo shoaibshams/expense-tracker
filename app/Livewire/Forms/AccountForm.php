@@ -3,6 +3,7 @@
 namespace App\Livewire\Forms;
 
 use App\Models\Account;
+use App\Models\Transaction;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
@@ -48,5 +49,16 @@ class AccountForm extends Form
         $this->validate();
 
         $this->account->update($this->all());
+    }
+
+    public function destroy($id)
+    {
+        // Check if there are related transactions
+        $related_transactions = Transaction::where('account_id', $id)->exists();
+
+        if ($related_transactions) return false;
+
+        // If no related transactions, proceed with deletion
+        return Account::where('id', $id)->delete();
     }
 }

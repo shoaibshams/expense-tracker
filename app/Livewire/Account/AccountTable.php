@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Account;
 
+use App\Livewire\Forms\AccountForm;
 use App\Models\Account;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -13,6 +14,7 @@ class AccountTable extends Component
     public $delete_id = '';
     public $per_page = 10;
     public $search = '';
+    public AccountForm $form;
 
     public function render()
     {
@@ -31,11 +33,14 @@ class AccountTable extends Component
 
     public function delete()
     {
-        $delete = Account::where('id', $this->delete_id)->delete();
+        $deleted = $this->form->destroy($this->delete_id);
 
-        if ($delete) {
-            $this->redirect(self::class, navigate: true);
+        if ($deleted) {
+            return $this->redirect(self::class, navigate: true);
         }
+
+        // displaying error message, if this account has transactions
+        $this->js("Swal.fire('Error','You cannot delete this account because there are related transactions.','error')");
     }
 
     public function setPerPage($per_page)

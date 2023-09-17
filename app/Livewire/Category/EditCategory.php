@@ -19,7 +19,7 @@ class EditCategory extends Component
     {
         $this->form->update();
 
-        return $this->redirect(AccountTable::class, navigate: true);
+        return $this->redirect(CategoryTable::class, navigate: true);
     }
 
     public function render()
