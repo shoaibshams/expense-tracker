@@ -8,8 +8,11 @@ use Livewire\Component;
 class IncomeExpenseWidget extends Component
 {
     public $title = 'Title';
+
     public $income = 0;
+
     public $expense = 0;
+
     public $type = '';
 
     public function render()

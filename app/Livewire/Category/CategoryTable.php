@@ -4,7 +4,6 @@ namespace App\Livewire\Category;
 
 use App\Livewire\Forms\CategoryForm;
 use App\Models\Category;
-use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,18 +12,22 @@ class CategoryTable extends Component
     use WithPagination;
 
     public $delete_id = '';
+
     public $per_page = 10;
+
     public $search = '';
+
     public $type = '';
+
     public CategoryForm $form;
 
     public function render()
     {
         return view('livewire.category.category-table', [
             'categories' => Category::query()
-                ->when(!empty($this->search), function ($query) {
-                    $query->where('name', 'like', '%' . $this->search . '%');
-                })->when(!empty($this->type), function ($query) {
+                ->when(! empty($this->search), function ($query) {
+                    $query->where('name', 'like', '%'.$this->search.'%');
+                })->when(! empty($this->type), function ($query) {
                     $query->where('type', $this->type);
                 })->paginate($this->per_page),
         ]);

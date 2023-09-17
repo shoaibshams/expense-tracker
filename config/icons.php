@@ -1,4 +1,5 @@
 <?php
+
 const ICONS = [
     'fab fa-500px',
     'fab fa-accessible-icon',

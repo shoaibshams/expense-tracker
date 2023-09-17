@@ -3,15 +3,18 @@
 namespace App\Livewire\Charts;
 
 use App\Models\Transaction;
-use Carbon\Carbon;
 use Livewire\Component;
 
 class MonthlyTransactionChart extends Component
 {
     public $type = 'monthly';
+
     public $labels = '';
+
     public $today_expenses = 0;
+
     public $total_expenses = 0;
+
     public $expenses = 0;
 
     public function render()
@@ -31,7 +34,7 @@ class MonthlyTransactionChart extends Component
     {
         $expense = Transaction::selectRaw('SUM(amount) as amount, DAY(date) as day')
             ->expense()
-            ->when($this->type == 'weekly', function ($q){
+            ->when($this->type == 'weekly', function ($q) {
                 $q->whereBetween('date', [now()->startOfWeek(), now()->endOfWeek()]);
             })
             ->whereMonth('date', date('m'))

@@ -56,7 +56,9 @@ class AccountForm extends Form
         // Check if there are related transactions
         $related_transactions = Transaction::where('account_id', $id)->exists();
 
-        if ($related_transactions) return false;
+        if ($related_transactions) {
+            return false;
+        }
 
         // If no related transactions, proceed with deletion
         return Account::where('id', $id)->delete();

@@ -12,16 +12,19 @@ class AccountTable extends Component
     use WithPagination;
 
     public $delete_id = '';
+
     public $per_page = 10;
+
     public $search = '';
+
     public AccountForm $form;
 
     public function render()
     {
         return view('livewire.account.account-table', [
             'accounts' => Account::query()
-                ->when(!empty($this->search), function ($query) {
-                    $query->where('name', 'like', '%' . $this->search . '%');
+                ->when(! empty($this->search), function ($query) {
+                    $query->where('name', 'like', '%'.$this->search.'%');
                 })->paginate($this->per_page),
         ]);
     }

@@ -9,10 +9,15 @@ use Livewire\Component;
 class YearlyTransactionChart extends Component
 {
     public $labels = '';
+
     public $income = '';
+
     public $expense = '';
+
     public $year_income = 0;
+
     public $year_expense = 0;
+
     public $percentage_difference = 100;
 
     public function render()

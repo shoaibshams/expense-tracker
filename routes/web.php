@@ -1,16 +1,16 @@
 <?php
 
-use App\Livewire\Category\CategoryTable;
-use App\Livewire\Category\CreateCategory;
-use App\Livewire\Category\EditCategory;
-use App\Livewire\Transaction\CreateTransaction;
-use App\Livewire\Transaction\EditTransaction;
-use App\Livewire\Transaction\TransactionTable;
-use App\Livewire\Dashboard;
-use Illuminate\Support\Facades\Route;
 use App\Livewire\Account\AccountTable;
 use App\Livewire\Account\CreateAccount;
 use App\Livewire\Account\EditAccount;
+use App\Livewire\Category\CategoryTable;
+use App\Livewire\Category\CreateCategory;
+use App\Livewire\Category\EditCategory;
+use App\Livewire\Dashboard;
+use App\Livewire\Transaction\CreateTransaction;
+use App\Livewire\Transaction\EditTransaction;
+use App\Livewire\Transaction\TransactionTable;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
