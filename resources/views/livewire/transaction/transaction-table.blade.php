@@ -64,25 +64,28 @@
 
     <div class="row">
         <div class="col-md-9">
-            <table class="table user-table table-hover align-items-center">
-                <thead class="thead-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Date</th>
-                    <th>Category</th>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Description</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody class="bg-white">
-                @forelse($transactions as $index => $transaction)
-                    <tr wire:key="{{ $transaction->id }}">
-                        <td>{{ $index + $transactions->firstItem() }}</td>
-                        <td>{{ $transaction->date->format('d-m-Y') }}</td>
-                        <td>{{ $transaction->category->name }}</td>
-                        <td>
+            <div class="table-responsive">
+                <table class="table user-table table-hover align-items-center">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Account</th>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                    @forelse($transactions as $index => $transaction)
+                        <tr wire:key="{{ $transaction->id }}">
+                            <td>{{ $index + $transactions->firstItem() }}</td>
+                            <td>{{ $transaction->date->format('d-m-Y') }}</td>
+                            <td>{{ $transaction->account->name }}</td>
+                            <td>{{ $transaction->category->name }}</td>
+                            <td>
                             <span
                                 @class([
                                 'badge badge-pill',
@@ -90,33 +93,35 @@
                                 'bg-danger' => $transaction->category->type === 'expense'
                                 ])>
                                 {{ $transaction->category->type }}</span>
-                        </td>
-                        <td>{{ number_format($transaction->amount) }}</td>
-                        <td>{{ $transaction->description }}</td>
-                        <td>
-                            <a
-                                href="{{ route('transaction.edit', $transaction->id) }}"
-                                class="btn btn-sm btn-primary"
-                                wire:navigate>
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <button
-                                class="btn btn-sm btn-danger"
-                                wire:click="setDeleteId({{ $transaction->id }})"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td class="text-danger text-center" colspan="7">No record found</td>
-                    </tr>
-                @endforelse
-                </tbody>
-            </table>
-            {{ $transactions->links() }}
+                            </td>
+                            <td>{{ number_format($transaction->amount) }}</td>
+                            <td>{{ $transaction->description }}</td>
+                            <td>
+                                <a
+                                        href="{{ route('transaction.edit', $transaction->id) }}"
+                                        class="btn btn-sm btn-primary"
+                                        wire:navigate>
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <button
+                                        class="btn btn-sm btn-danger"
+                                        wire:click="setDeleteId({{ $transaction->id }})"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td class="text-danger text-center" colspan="7">No record found</td>
+                        </tr>
+                    @endforelse
+                    </tbody>
+                </table>
+
+                {{ $transactions->links() }}
+            </div>
         </div>
 
         <div class="col-md-3">

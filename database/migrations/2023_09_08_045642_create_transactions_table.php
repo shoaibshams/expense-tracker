@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->date('date');
+            $table->foreignId('account_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->decimal('amount');
             $table->text('description');

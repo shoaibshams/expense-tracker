@@ -19,6 +19,11 @@ class Transaction extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function account(): BelongsTo
+    {
+        return $this->belongsTo(Account::class);
+    }
+
     public function scopeIncome(Builder $query): Builder
     {
         return $query->whereRelation('category', 'type', 'income');

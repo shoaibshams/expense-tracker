@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Account;
 use App\Models\Category;
 use App\Models\Transaction;
 use Illuminate\Database\Seeder;
@@ -13,6 +14,15 @@ class DemoSeeder extends Seeder
      */
     public function run(): void
     {
+        $accounts = [
+            ['name' => 'Cash', 'code' => fake()->iban, 'description' => fake()->text(25)],
+            ['name' => 'Bank', 'code' => fake()->iban, 'description' => fake()->text(25)],
+        ];
+
+        foreach ($accounts as $account) {
+            Account::create($account);
+        }
+
         $categories = [
             ['name' => 'General', 'type' => 'expense', 'icon' => 'fa fa-link'],
             ['name' => 'Groceries', 'type' => 'expense', 'icon' => 'fa fa-link'],
@@ -41,9 +51,10 @@ class DemoSeeder extends Seeder
         for ($i = 0; $i < 1000; $i++) {
             Transaction::create([
                 'date' => fake()->dateTimeBetween(now()->subYear())->format('Y-m-d'),
+                'account_id' => rand(1, 2),
                 'category_id' => rand(1, 18),
                 'amount' => rand(500, 20000),
-                'description' => fake()->text(50),
+                'description' => fake()->text(25),
             ]);
         }
     }
