@@ -20,6 +20,9 @@ class AccountForm extends Form
     #[Rule('nullable')]
     public $code = '';
 
+    #[Rule('required|numeric')]
+    public $opening_balance = '';
+
     #[Rule('nullable')]
     public $description = '';
 
@@ -36,6 +39,7 @@ class AccountForm extends Form
         $this->id = $account->id;
         $this->name = $account->name;
         $this->code = $account->code;
+        $this->opening_balance = $account->opening_balance;
         $this->description = $account->description;
     }
 

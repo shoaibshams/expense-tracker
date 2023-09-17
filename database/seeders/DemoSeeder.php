@@ -15,8 +15,8 @@ class DemoSeeder extends Seeder
     public function run(): void
     {
         $accounts = [
-            ['name' => 'Cash', 'code' => fake()->iban, 'description' => fake()->text(25)],
-            ['name' => 'Bank', 'code' => fake()->iban, 'description' => fake()->text(25)],
+            ['name' => 'Cash', 'code' => fake()->iban, 'description' => fake()->text(25), 'opening_balance' => rand(50000, 100000)],
+            ['name' => 'Bank', 'code' => fake()->iban, 'description' => fake()->text(25), 'opening_balance' => rand(50000, 100000)],
         ];
 
         foreach ($accounts as $account) {

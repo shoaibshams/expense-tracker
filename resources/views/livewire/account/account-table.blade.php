@@ -46,6 +46,7 @@
                 <th class="border-bottom">#</th>
                 <th class="border-bottom">Name</th>
                 <th class="border-bottom">Code</th>
+                <th class="border-bottom">Opening Balance</th>
                 <th class="border-bottom">Description</th>
                 <th class="border-bottom">Action</th>
             </tr>
@@ -56,6 +57,7 @@
                     <td>{{ $index + $accounts->firstItem() }}</td>
                     <td>{{ $account->name }}</td>
                     <td>{{ $account->code }}</td>
+                    <td>{{ number_format($account->opening_balance) }}</td>
                     <td>{{ $account->description }}</td>
                     <td>
                         <a href="{{ route('account.edit', $account->id) }}" class="btn btn-primary" wire:navigate>

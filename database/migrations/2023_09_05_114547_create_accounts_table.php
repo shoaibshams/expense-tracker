@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code')->nullable();
+            $table->double('opening_balance', 11, 2)->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
         });
