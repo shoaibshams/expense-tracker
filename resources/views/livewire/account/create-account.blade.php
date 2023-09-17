@@ -10,11 +10,11 @@
                     <form wire:submit="save">
                         <div class="row mb-4">
                             <div class="col-lg-3 col-sm-6">
-                                <label class="small mb-1" for="account">Account Name</label>
+                                <label class="small mb-1" for="name">Account Name</label>
                                 <input
                                     class="form-control"
                                     wire:model="form.name"
-                                    id="account"
+                                    id="name"
                                     type="text"
                                     placeholder="Enter account"
                                     value="">
@@ -22,15 +22,27 @@
                             </div>
 
                             <div class="col-lg-3 col-sm-6">
-                                <label class="small mb-1" for="account">Account Code</label>
+                                <label class="small mb-1" for="code">Account Code</label>
                                 <input
                                     class="form-control"
                                     wire:model="form.code"
-                                    id="account"
+                                    id="code"
                                     type="text"
                                     placeholder="Enter account"
                                     value="">
-                                @error('form.name')<small class="text-danger">{{ $message }}</small> @enderror
+                                @error('form.code')<small class="text-danger">{{ $message }}</small> @enderror
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="small mb-1" for="description">Description</label>
+                                <input
+                                    class="form-control"
+                                    wire:model="form.description"
+                                    id="description"
+                                    type="text"
+                                    placeholder="Enter account"
+                                    value="">
+                                @error('form.description')<small class="text-danger">{{ $message }}</small> @enderror
                             </div>
 
                         </div>

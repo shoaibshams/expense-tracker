@@ -54,7 +54,7 @@
             @foreach($accounts as $index => $account)
                 <tr wire:key="{{ $account->id }}">
                     <td>{{ $index + $accounts->firstItem() }}</td>
-                    <td><i class="{{ $account->name }}"></i></td>
+                    <td>{{ $account->name }}</td>
                     <td>{{ $account->code }}</td>
                     <td>{{ $account->description }}</td>
                     <td>

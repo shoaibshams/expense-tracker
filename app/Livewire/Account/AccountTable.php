@@ -31,7 +31,11 @@ class AccountTable extends Component
 
     public function delete()
     {
-        Category::where('id', $this->delete_id)->delete();
+        $delete = Account::where('id', $this->delete_id)->delete();
+
+        if ($delete) {
+            $this->redirect(self::class, navigate: true);
+        }
     }
 
     public function setPerPage($per_page)

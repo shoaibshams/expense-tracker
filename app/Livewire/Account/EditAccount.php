@@ -2,17 +2,17 @@
 
 namespace App\Livewire\Account;
 
-use App\Livewire\Forms\CategoryForm;
-use App\Models\Category;
+use App\Livewire\Forms\AccountForm;
+use App\Models\Account;
 use Livewire\Component;
 
 class EditAccount extends Component
 {
-    public CategoryForm $form;
+    public AccountForm $form;
 
-    public function mount(Category $category)
+    public function mount(Account $account)
     {
-        $this->form->setCategory($category);
+        $this->form->setAccount($account);
     }
 
     public function update()

@@ -6,40 +6,45 @@
         <!-- Account details card-->
         <div class="card mb-4">
             <div class="card-header bg-gray-800 text-white p-3">
-                <span class="h4">Edit Category</span>
+                <span class="h4">Edit Account</span>
             </div>
             <div class="card-body">
                 <form wire:submit="update">
-                    <div class="row gx-3 mb-3">
-                        <div class="col-md-3">
-                            <label class="small mb-1" for="icon">Icon</label>
-                            <select class="form-control" wire:model="form.icon" id="icon">
-                                @foreach(ICONS as $icon)
-                                    <option value="{{ $icon }}">{{ $icon }}</option>
-                                @endforeach
-                            </select>
-                            @error('form.icon') <small class="text-danger">{{ $message }}</small>  @enderror
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="small mb-1" for="category">Category</label>
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-sm-6">
+                            <label class="small mb-1" for="name">Account Name</label>
                             <input
                                     class="form-control"
                                     wire:model="form.name"
-                                    id="category"
+                                    id="name"
                                     type="text"
-                                    placeholder="Enter category"
+                                    placeholder="Enter account"
                                     value="">
-                            @error('form.name') <small class="text-danger">{{ $message }}</small> @enderror
+                            @error('form.name')<small class="text-danger">{{ $message }}</small> @enderror
                         </div>
 
-                        <div class="col-md-3">
-                            <label class="small mb-1" for="type">Type</label>
-                            <select class="form-control" wire:model="form.type" id="type">
-                                <option value="income">Income</option>
-                                <option value="expense">Expense</option>
-                            </select>
-                            @error('form.type') <small class="text-danger">{{ $message }}</small> @enderror
+                        <div class="col-lg-3 col-sm-6">
+                            <label class="small mb-1" for="code">Account Code</label>
+                            <input
+                                    class="form-control"
+                                    wire:model="form.code"
+                                    id="code"
+                                    type="text"
+                                    placeholder="Enter account"
+                                    value="">
+                            @error('form.code')<small class="text-danger">{{ $message }}</small> @enderror
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="small mb-1" for="description">Description</label>
+                            <input
+                                    class="form-control"
+                                    wire:model="form.description"
+                                    id="description"
+                                    type="text"
+                                    placeholder="Enter account"
+                                    value="">
+                            @error('form.description')<small class="text-danger">{{ $message }}</small> @enderror
                         </div>
 
                     </div>
