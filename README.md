@@ -1,7 +1,6 @@
 # Expense Tracker
 ## Description
-Expense Tracker is an open source project that helps you track your personal expenses using Laravel and Livewire. 
-You can easily create and manage your expenses, categorize them by type, and generate reports to see your spending patterns.
+Expense Tracker is an open-source project designed to assist you in meticulously monitoring your personal finances. Built with Laravel and Livewire, it empowers you to effortlessly record and oversee your expenses, classify them by account type (such as cash or bank), and generate insightful reports to gain valuable insights into your financial habits and trends.
 
 ## Screenshots
 ![Dashboard](https://github.com/shoaibshams/expense-tracker/assets/9925154/28f86e21-09d5-48c9-8bd1-783d4729a202)
