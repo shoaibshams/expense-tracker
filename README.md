@@ -4,15 +4,23 @@ Expense Tracker is an open-source project designed to assist you in meticulously
 
 ## Screenshots
 ![Dashboard](https://github.com/shoaibshams/expense-tracker/assets/9925154/28f86e21-09d5-48c9-8bd1-783d4729a202)
-![categories-table](https://github.com/shoaibshams/expense-tracker/assets/9925154/313081a2-d35a-4537-8a5a-ae53bf7fc992)
-![new-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/7a136707-aca5-4b45-b9d2-8db5ac3f17cc)
-![edit-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/7f57306d-1aa5-4a9f-9dc8-ff7ebaf76de3)
-![delete-category](https://github.com/shoaibshams/expense-tracker/assets/9925154/51f25a3b-df47-4233-aa88-544acb4802ac)
-![transactions-table](https://github.com/shoaibshams/expense-tracker/assets/9925154/8afa4e8e-279f-451b-bccf-c49f9cbb9779)
-![new-transaction](https://github.com/shoaibshams/expense-tracker/assets/9925154/630f96f9-cb2d-4dad-a3ec-d7ec5a40cf57)
-![edit-transaction](https://github.com/shoaibshams/expense-tracker/assets/9925154/ba718886-6286-4f98-bcd4-ca00ac3e6c50)
+![accounts](https://github.com/shoaibshams/expense-tracker/assets/9925154/c4a5b3e5-e0d1-4942-bded-701855778523)
+![categories](https://github.com/shoaibshams/expense-tracker/assets/9925154/b2418ac8-1b0b-4d03-aae0-ad7de6d28f67)
+![transactions](https://github.com/shoaibshams/expense-tracker/assets/9925154/cebd550e-57ed-4283-9b32-c018814a722f)
 
+## Features
 
+* Dashboard
+  * Monthly and weekly summary charts
+  * Summary of Accounts (Opening balance, Income, Expense, Current Balance)
+  * Yearly breakdown of income and expenses, organized by month
+* Multiple accounts
+  * Support for multiple account types, including Cash, Bank, and more
+* Categories
+  * Income & Expense categories
+* Reporting
+  * Detailed Accounts Ledger
+  * Transaction Reports with Customizable Category Filters and More
 
 ## Installation
 ```bash
@@ -54,8 +62,14 @@ You should now be able to access the project at http://localhost:8000.
 **Password:** password
 
 ## Usage
-To use Expense Tracker, you will need to create an account with your name, email, and password. Once you log in, you can start adding your expenses by clicking on the "Add Expense" button. You can enter the amount, date, category, and description of each expense. You can also edit or delete your expenses by clicking on the corresponding icons in the table.
-You can view your expenses by month, year, or category by using the filters on the top of the page. You can also generate reports to see your total expenses, average expenses, and expense distribution by category. You can export your reports as PDF or CSV files by clicking on the "Export" button.
+
+To begin using the Expense Tracker, simply log in using the following credentials:
+
+**Email:** admin@admin.com
+
+**Password:** password
+
+After logging in, you can start adding accounts, categories, income, and expenses.
 
 # Contributing
 
