@@ -1,3 +1,15 @@
+<p align="center">
+    <img src="https://raw.githubusercontent.com/shoaibshams/expense-tracker/main/readme-logo.png?sanitize=true">
+</p>
+<p align="center">
+    <a href="https://github.com/shoaibshams/expense-tracker/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/shoaibshams/expense-tracker" />
+    </a>
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+    </a>
+</p>
+
 # Expense Tracker
 ## Description
 Expense Tracker is an open-source project designed to assist you in meticulously monitoring your personal finances. Built with Laravel and Livewire, it empowers you to effortlessly record and oversee your expenses, classify them by account type (such as cash or bank), and generate insightful reports to gain valuable insights into your financial habits and trends.
