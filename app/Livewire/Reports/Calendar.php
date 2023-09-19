@@ -25,6 +25,7 @@ class Calendar extends Component
                 ]
             ];
         }
+
         return view('livewire.reports.calendar', [
             'transactions_data' => json_encode($transactions_data)
         ]);

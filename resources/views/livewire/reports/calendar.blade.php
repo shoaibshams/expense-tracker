@@ -42,25 +42,23 @@
 
 @push('js')
     <script>
-        document.addEventListener('livewire:initialized', () => {
-            var calendarEl = document.getElementById('calendar');
+        var calendarEl = document.getElementById('calendar');
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                height: 650,
-                eventClick: function(info) {
-                    $('#date').text(info.event.extendedProps.date)
-                    $('#account').text(info.event.extendedProps.account)
-                    $('#category').text(info.event.extendedProps.category)
-                    $('#amount').text(info.event.extendedProps.amount)
-                    $('#description').text(info.event.extendedProps.description)
-                    $('#modalNotification').modal('show')
-                },
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 650,
+            eventClick: function(info) {
+                $('#date').text(info.event.extendedProps.date)
+                $('#account').text(info.event.extendedProps.account)
+                $('#category').text(info.event.extendedProps.category)
+                $('#amount').text(info.event.extendedProps.amount)
+                $('#description').text(info.event.extendedProps.description)
+                $('#modalNotification').modal('show')
+            },
 
-                events: {!! $transactions_data !!}
-            });
-
-            calendar.render();
+            events: {!! $transactions_data !!}
         });
+
+        calendar.render();
     </script>
 @endpush
