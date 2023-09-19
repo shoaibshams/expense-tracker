@@ -94,9 +94,6 @@
 
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js'></script>
-    <script src='https://unpkg.com/popper.js/dist/umd/popper.min.js'></script>
-    <script src='https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js'></script>
-
 </head>
 
 <body>
