@@ -7,6 +7,7 @@ use App\Livewire\Category\CategoryTable;
 use App\Livewire\Category\CreateCategory;
 use App\Livewire\Category\EditCategory;
 use App\Livewire\Dashboard;
+use App\Livewire\Reports\Calendar;
 use App\Livewire\Transaction\CreateTransaction;
 use App\Livewire\Transaction\EditTransaction;
 use App\Livewire\Transaction\TransactionTable;
@@ -39,4 +40,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/account', AccountTable::class)->name('account');
     Route::get('/account/create', CreateAccount::class)->name('account.create');
     Route::get('/account/{account}/edit', EditAccount::class)->name('account.edit');
+
+    /*
+     * Reports route
+     */
+    Route::get('/calendar-view', Calendar::class)->name('calendar-view');
 });

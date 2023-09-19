@@ -80,30 +80,58 @@
 
             <li @class(['nav-item','active' => request()->routeIs('home')])>
                 <a href="{{ route('home') }}" class="nav-link" wire:navigate>
-                    <i class="fa fa-tachometer-alt me-1"></i>
+                    <span class="sidebar-icon"><i class="fa fa-tachometer-alt"></i></span>
                     <span class="sidebar-text">Dashboard</span>
                 </a>
             </li>
 
             <li @class(['nav-item','active' => request()->routeIs('transaction')])>
                 <a href="{{ route('transaction') }}" class="nav-link" wire:navigate>
-                    <i class="fas fa-money-bill-wave me-1"></i>
+                    <span class="sidebar-icon"><i class="fas fa-money-bill-wave"></i></span>
                     <span class="sidebar-text">Transactions</span>
                 </a>
             </li>
 
             <li @class(['nav-item','active' => request()->routeIs('category')])>
                 <a href="{{ route('category') }}" class="nav-link" wire:navigate>
-                    <i class="fa fa-list me-1"></i>
+                    <span class="sidebar-icon"><i class="fa fa-list"></i></span>
                     <span class="sidebar-text">Categories</span>
                 </a>
             </li>
 
             <li @class(['nav-item','active' => request()->routeIs('account')])>
                 <a href="{{ route('account') }}" class="nav-link" wire:navigate>
-                    <i class="fa fa-calculator me-1"></i>
+                    <span class="sidebar-icon"><i class="fa fa-calculator"></i></span>
                     <span class="sidebar-text">Accounts</span>
                 </a>
+            </li>
+
+            <li class="nav-item">
+                <span
+                        class="nav-link d-flex justify-content-between align-items-center collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#submenu-app"
+                        aria-expanded="false">
+                    <span>
+                        <span class="sidebar-icon"><i class="fa fa-file-alt"></i></span>
+                        <span class="sidebar-text">Reports</span>
+                    </span>
+                    <span class="link-arrow"><svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></span>
+                </span>
+                <div class="multi-level collapse" role="list" id="submenu-app" aria-expanded="false" style="">
+                    <ul class="flex-column nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" wire:navigate>
+                                <span class="sidebar-text">Account Ledger</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('calendar-view') }}" wire:navigate>
+                                <span class="sidebar-text">Calendar View</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </div>
