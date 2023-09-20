@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/shoaibshams/expense-tracker/main/readme-logo.png?sanitize=true">
+    <img src="https://raw.githubusercontent.com/shoaibshams/expense-tracker/main/readme-logo.png?sanitize=true" height="100">
 </p>
 <p align="center">
     <a href="https://github.com/shoaibshams/expense-tracker/graphs/contributors">
@@ -19,6 +19,8 @@ Expense Tracker is an open-source project designed to assist you in meticulously
 ![accounts](https://github.com/shoaibshams/expense-tracker/assets/9925154/c4a5b3e5-e0d1-4942-bded-701855778523)
 ![categories](https://github.com/shoaibshams/expense-tracker/assets/9925154/b2418ac8-1b0b-4d03-aae0-ad7de6d28f67)
 ![transactions](https://github.com/shoaibshams/expense-tracker/assets/9925154/cebd550e-57ed-4283-9b32-c018814a722f)
+![calendar-view](https://github.com/shoaibshams/expense-tracker/assets/9925154/5b51ea8b-48b2-4a90-87f0-ceb3d1759eb1)
+
 
 ## Features
 
