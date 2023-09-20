@@ -1,5 +1,11 @@
 <div>
-    <div id="calendar" class="mt-4"></div>
+    <x-layouts.breadcrumb />
+
+    <div class="card">
+        <div class="card-body">
+            <div id="calendar" class="mt-4"></div>
+        </div>
+    </div>
 
     <div class="modal fade" id="modalNotification" tabindex="-1" role="dialog" aria-labelledby="modalTitleNotify" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-success text-white" role="document">
@@ -46,7 +52,9 @@
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
-            height: 650,
+            height: 'auto',
+            dayMaxEvents: 2,
+            moreLinkClassNames: 'badge border-0 bg-gray-500',
             eventClick: function(info) {
                 $('#date').text(info.event.extendedProps.date)
                 $('#account').text(info.event.extendedProps.account)
