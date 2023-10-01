@@ -18,7 +18,7 @@ Expense Tracker is an open-source project designed to assist you in meticulously
 
 Before contribution/using you can just visit the project for real time experience:
 
-**URL:** https://os.laravelpakistan.com/expense-tracker/public/
+**URL:** https://expense-tracker.laravelpakistan.com
 
 **Email:** admin@admin.com
 
