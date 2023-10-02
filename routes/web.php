@@ -12,6 +12,7 @@ use App\Livewire\Transaction\CreateTransaction;
 use App\Livewire\Transaction\EditTransaction;
 use App\Livewire\Transaction\TransactionTable;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
