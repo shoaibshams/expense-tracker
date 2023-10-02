@@ -3,7 +3,7 @@
     <div class="border border-2 px-3 rounded-3 border-gray-200 d-flex justify-content-between w-100" id="navbarSupportedContent">
       <div class="d-flex align-items-center">
         <div class="fw-bolder">
-            Date: {{ date('d-m-Y') }}
+            Date: {{ date('d-M-Y') }}
         </div>
       </div>
       <!-- Navbar links -->
@@ -15,7 +15,7 @@
               <img class="avatar rounded-circle" alt="Image placeholder" src="{{ asset('images/user.png') }}">
               <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                 <span
-                  class="mb-0 font-small fw-bold text-gray-900">{{  auth()->user()->name }}</span>
+                  class="mb-0 font-small fw-bold text-gray-900">{{ ucwords(auth()->user()->name) }}</span>
               </div>
             </div>
           </a>
