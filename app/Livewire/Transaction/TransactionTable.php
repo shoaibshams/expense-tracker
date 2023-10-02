@@ -23,18 +23,17 @@ class TransactionTable extends Component
 
     public function render()
     {
-        $transactions = Transaction::with('category')
-            ->when(! empty($this->date), fn ($q) => $q->whereDate('date', $this->date))
-            ->when(! empty($this->category_id), fn ($q) => $q->where('category_id', $this->category_id))
-            ->when(! empty($this->type), fn ($q) => $q->whereRelation('category', 'type', $this->type))
-            ->latest('date')->paginate($this->per_page);
+        $transactions = Transaction::with('category')->when(! empty($this->date), fn($q) => $q->whereDate('date', $this->date))->when(
+                ! empty($this->category_id),
+                fn($q) => $q->where('category_id', $this->category_id)
+            )->when(! empty($this->type), fn($q) => $q->whereRelation('category', 'type', $this->type))->latest('date')->paginate($this->per_page);
 
         return view('livewire.transaction.transaction-table', [
             'transactions' => $transactions,
             'current_month_transactions' => Transaction::whereMonth('date', date('n'))->sum('amount'),
             'current_year_transactions' => Transaction::whereYear('date', date('Y'))->sum('amount'),
             'total_transactions' => Transaction::sum('amount'),
-            'categories' => Category::when(! empty($this->type), fn ($q) => $q->where('type', $this->type))->get(),
+            'categories' => Category::when(! empty($this->type), fn($q) => $q->where('type', $this->type))->get(),
         ]);
     }
 
@@ -60,5 +59,10 @@ class TransactionTable extends Component
         if ($property === 'type') {
             $this->reset('category_id');
         }
+    }
+
+    public function clearDate(): void
+    {
+        $this->date = null;
     }
 }

@@ -1,13 +1,13 @@
 <div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-4">
 
-        <x-layouts.breadcrumb heading="Transactions" sub-heading="Manage your income and expense transactions" />
+        <x-layouts.breadcrumb heading="Transactions" sub-heading="Manage your income and expense transactions"/>
 
         <div class="btn-toolbar mb-2 mb-md-0">
             <a
-                href="{{ route('transaction.create') }}"
-                class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"
-                wire:navigate>
+                    href="{{ route('transaction.create') }}"
+                    class="btn btn-sm btn-gray-800 d-inline-flex align-items-center"
+                    wire:navigate>
                 <i class="fa fa-plus me-1"></i>
                 Add New
             </a>
@@ -27,8 +27,11 @@
                     </span>
                     <input type="date" wire:model.live="date" class="form-control">
                 </div>
+                <button class="btn btn-primary btn-sm" title="Clear date" wire:click="clearDate">
+                    <i class="fa fa-undo"></i>
+                </button>
 
-                <div class="input-group me-2 me-lg-3 fmxw-200">
+                <div class="input-group me-2 me-lg-3 ms-lg-3 fmxw-200">
                     <span class="input-group-text">
                         <i class="fa fa-table"></i>
                     </span>
@@ -67,25 +70,25 @@
             <div class="table-responsive">
                 <table class="table user-table table-hover align-items-center">
                     <thead class="thead-dark">
-                    <tr>
-                        <th>#</th>
-                        <th>Date</th>
-                        <th>Account</th>
-                        <th>Category</th>
-                        <th>Type</th>
-                        <th>Amount</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Account</th>
+                            <th>Category</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody class="bg-white">
-                    @forelse($transactions as $index => $transaction)
-                        <tr wire:key="{{ $transaction->id }}">
-                            <td>{{ $index + $transactions->firstItem() }}</td>
-                            <td>{{ $transaction->date->format('d-m-Y') }}</td>
-                            <td>{{ $transaction->account->name }}</td>
-                            <td>{{ $transaction->category->name }}</td>
-                            <td>
+                        @forelse($transactions as $index => $transaction)
+                            <tr wire:key="{{ $transaction->id }}">
+                                <td>{{ $index + $transactions->firstItem() }}</td>
+                                <td>{{ $transaction->date->format('d-m-Y') }}</td>
+                                <td>{{ $transaction->account->name }}</td>
+                                <td>{{ $transaction->category->name }}</td>
+                                <td>
                             <span
                                 @class([
                                 'badge badge-pill',
@@ -93,30 +96,30 @@
                                 'bg-danger' => $transaction->category->type === 'expense'
                                 ])>
                                 {{ $transaction->category->type }}</span>
-                            </td>
-                            <td>{{ number_format($transaction->amount) }}</td>
-                            <td>{{ $transaction->description }}</td>
-                            <td>
-                                <a
-                                        href="{{ route('transaction.edit', $transaction->id) }}"
-                                        class="btn btn-sm btn-primary"
-                                        wire:navigate>
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <button
-                                        class="btn btn-sm btn-danger"
-                                        wire:click="setDeleteId({{ $transaction->id }})"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td class="text-danger text-center" colspan="7">No record found</td>
-                        </tr>
-                    @endforelse
+                                </td>
+                                <td>{{ number_format($transaction->amount) }}</td>
+                                <td>{{ $transaction->description }}</td>
+                                <td>
+                                    <a
+                                            href="{{ route('transaction.edit', $transaction->id) }}"
+                                            class="btn btn-sm btn-primary"
+                                            wire:navigate>
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <button
+                                            class="btn btn-sm btn-danger"
+                                            wire:click="setDeleteId({{ $transaction->id }})"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td class="text-danger text-center" colspan="7">No record found</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
 
@@ -125,13 +128,13 @@
         </div>
 
         <div class="col-md-3">
-            <livewire:widgets.income-expense-widget type="today" />
+            <livewire:widgets.income-expense-widget type="today"/>
 
-            <livewire:widgets.income-expense-widget type="current_week" />
+            <livewire:widgets.income-expense-widget type="current_week"/>
 
-            <livewire:widgets.income-expense-widget type="current_month" />
+            <livewire:widgets.income-expense-widget type="current_month"/>
 
-            <livewire:widgets.income-expense-widget type="current_year" />
+            <livewire:widgets.income-expense-widget type="current_year"/>
         </div>
     </div>
 
