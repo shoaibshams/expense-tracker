@@ -27,11 +27,8 @@
                     </span>
                     <input type="date" wire:model.live="date" class="form-control">
                 </div>
-                <button class="btn btn-primary btn-sm" title="Clear date" wire:click="clearDate">
-                    <i class="fa fa-undo"></i>
-                </button>
 
-                <div class="input-group me-2 me-lg-3 ms-lg-3 fmxw-200">
+                <div class="input-group me-2 me-lg-3 fmxw-200">
                     <span class="input-group-text">
                         <i class="fa fa-table"></i>
                     </span>
@@ -53,6 +50,9 @@
                         @endforeach
                     </select>
                 </div>
+                <button class="btn btn-primary btn-sm" title="Clear date" wire:click="clearDate">
+                    <i class="fa fa-undo"></i>
+                </button>
             </div>
             <div class="col-3 col-lg-4 d-flex justify-content-end">
                 <select class="form-select fmxw-100" wire:model.live="per_page">

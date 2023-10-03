@@ -24,9 +24,8 @@ class TransactionTable extends Component
     public function render()
     {
         $transactions = Transaction::with('category')->when(! empty($this->date), fn($q) => $q->whereDate('date', $this->date))->when(
-                ! empty($this->category_id),
-                fn($q) => $q->where('category_id', $this->category_id)
-            )->when(! empty($this->type), fn($q) => $q->whereRelation('category', 'type', $this->type))->latest('date')->paginate($this->per_page);
+            ! empty($this->category_id), fn($q) => $q->where('category_id', $this->category_id)
+        )->when(! empty($this->type), fn($q) => $q->whereRelation('category', 'type', $this->type))->latest('date')->paginate($this->per_page);
 
         return view('livewire.transaction.transaction-table', [
             'transactions' => $transactions,
@@ -63,6 +62,6 @@ class TransactionTable extends Component
 
     public function clearDate(): void
     {
-        $this->date = null;
+        $this->date = $this->type = $this->category_id = null;
     }
 }
